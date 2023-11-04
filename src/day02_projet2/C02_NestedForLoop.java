@@ -1,6 +1,6 @@
 package day02_projet2;
 
-public class C02 {
+public class C02_NestedForLoop {
 
     public static void main(String[] args) {
         /*Bir matrisin her satırının ve her sütununun toplamını bulan Java Programı yazin

@@ -1,6 +1,6 @@
 package day02_projet2;
 
-public class C01 {
+public class C01_Matris {
 
     public static void main(String[] args) {
         /*Soru 1:
