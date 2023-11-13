@@ -27,8 +27,8 @@ public class Islemler {
 
      */
 
-    Scanner scanner = new Scanner(System.in);
-    int kitapNo = 1005;
+    static Scanner scanner = new Scanner(System.in);
+    static int kitapNo ;
     static ArrayList<Kitap> kitapList = new ArrayList<>(); // bu array içinde kitap classından oluşturulan objeler tutulacak
 
     public void kitapEkleme() {
@@ -54,7 +54,7 @@ public class Islemler {
             }
         }
 
-        if (flag) {
+        if (flag) {//false
             System.out.println(aranacakKitapNo + " NOLU KİTAP BİLGİLERİ: " + kitapList.get(i));
         } else {
             System.out.println(aranacakKitapNo + " NOLU KİTAP YOKTUR...");

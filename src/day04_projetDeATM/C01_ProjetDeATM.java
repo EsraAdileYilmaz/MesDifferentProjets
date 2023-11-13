@@ -8,7 +8,7 @@ public class C01_ProjetDeATM {
 
 
     static double bakiye;
-    static String kartNo = "1234123412341234";
+    static String kartNo = "1234123412341234";//16 haneli bir kart no.
     static int sifrem = 1234;
 
     static Scanner scan = new Scanner (System.in);
@@ -24,8 +24,10 @@ public class C01_ProjetDeATM {
 
             System.out.println("Lutfen sifrenizi giriniz: ");
             sifre = scan.nextInt();
-            scan.nextLine();//?????
+            scan.nextLine();//nextline satir atlama problemini asmak icin yapildi.//dummy satiri
+            //yoksa kart no almadan direk sifreye geciyor.
             if(sifre != sifrem || kartNo.replace(" ", "").length() != 16)  {
+                //kullanicinin giciklik hakki tesbit edilmis.
                 System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                 System.out.println("Islem Basarisiz !");
                 System.out.println("Hatali tuslama yaptiniz !");		}
@@ -53,7 +55,6 @@ public class C01_ProjetDeATM {
                     break;
                 case 'B':
                     paraYatir();
-
                     break;
                 case 'C':
                     paraCekme();
@@ -62,16 +63,14 @@ public class C01_ProjetDeATM {
                     paraGonder();
                     break;
                 case 'E':
-
                     sifreDegistir();
                     break;
-
                 case 'F':
                     System.out.println("Bilgi fisi almak ister misiniz\nEvet icin 'E' Dogayi korumak icin 'H'");
-                    char a = scan.next().toUpperCase().charAt(0);
-                    if (a=='E') {
+                    char a = scan.next().toUpperCase().charAt(0);//fis almada 'E' ve 'H' yi icine kaydetmek icin
+                    if (a=='E') {//bilgi fisi almak istersek=Evet icin 'E'
                         fatura();// fis almak icin yapilmis bir methoddur.
-                    }else {
+                    }else {//bilgi fisi almak istemezsek=Dogayi korumak icin 'H'
                         System.out.println("TESEKKURLER DOGA'YA KATKIDA BULUNDUNUZ !!!");
                     }
                     break;
@@ -89,7 +88,7 @@ public class C01_ProjetDeATM {
 
     public static void sifreDegistir() {
 
-        System.out.println("Lutfen eski sifrenizi dogrulayiniz...");
+        System.out.println("Lutfen eski sifrenizi dogrulayiniz..!");
         int sifre  = scan.nextInt();
 
 
@@ -112,7 +111,7 @@ public class C01_ProjetDeATM {
     public static void paraGonder() {
 
         System.out.println("Lutfen gondermek istediginiz kisinin hesap numarasini (IBAN) giriniz...");
-        scan.nextLine();//??????
+        scan.nextLine();//nextline satir atlama problemini asmak icin yapildi.
         String IBAN = scan.nextLine();
 
         if (IBAN.startsWith("TR") && IBAN.replaceAll("\\s", "").length() == 26 ) {
